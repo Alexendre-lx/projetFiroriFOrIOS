@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC096EAC23B6169400C08B65 /* SAPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EAB23B6164200C08B65 /* SAPCommon.framework */; };
+		EC096EAD23B6169400C08B65 /* SAPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EAB23B6164200C08B65 /* SAPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC096EAE23B616A100C08B65 /* SAPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EAB23B6164200C08B65 /* SAPCommon.framework */; };
+		EC096EAF23B616A100C08B65 /* SAPFiori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EAA23B6164200C08B65 /* SAPFiori.framework */; };
+		EC096EB023B616A100C08B65 /* SAPFiori.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EAA23B6164200C08B65 /* SAPFiori.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC096EB123B616A100C08B65 /* SAPFioriFlows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EA423B6164100C08B65 /* SAPFioriFlows.framework */; };
+		EC096EB223B616A100C08B65 /* SAPFioriFlows.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EA423B6164100C08B65 /* SAPFioriFlows.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC096EB323B616A100C08B65 /* SAPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EA723B6164200C08B65 /* SAPFoundation.framework */; };
+		EC096EB423B616A100C08B65 /* SAPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EA723B6164200C08B65 /* SAPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC096EB723B616A100C08B65 /* SAPOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EA823B6164200C08B65 /* SAPOData.framework */; };
+		EC096EB823B616A100C08B65 /* SAPOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EA823B6164200C08B65 /* SAPOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC096EB923B616A100C08B65 /* SAPOfflineOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EA923B6164200C08B65 /* SAPOfflineOData.framework */; };
+		EC096EBA23B616A100C08B65 /* SAPOfflineOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC096EA923B6164200C08B65 /* SAPOfflineOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC096EBC23B651F300C08B65 /* propositionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC096EBB23B651F300C08B65 /* propositionsTableViewController.swift */; };
+		EC4D9C3123B6097E00C72721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C3023B6097E00C72721 /* AppDelegate.swift */; };
+		EC4D9C3323B6097E00C72721 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C3223B6097E00C72721 /* SceneDelegate.swift */; };
+		EC4D9C3523B6097E00C72721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C3423B6097E00C72721 /* ViewController.swift */; };
+		EC4D9C3823B6097E00C72721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4D9C3623B6097E00C72721 /* Main.storyboard */; };
+		EC4D9C3B23B6097E00C72721 /* TestFiori4Ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C3923B6097E00C72721 /* TestFiori4Ios.xcdatamodeld */; };
+		EC4D9C3D23B6098100C72721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4D9C3C23B6098100C72721 /* Assets.xcassets */; };
+		EC4D9C4023B6098100C72721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4D9C3E23B6098100C72721 /* LaunchScreen.storyboard */; };
+		EC4D9C5923B613BB00C72721 /* navController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C5823B613BB00C72721 /* navController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC4D9C5C23B615BF00C72721 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC096EAD23B6169400C08B65 /* SAPCommon.framework in Embed Frameworks */,
+				EC096EB223B616A100C08B65 /* SAPFioriFlows.framework in Embed Frameworks */,
+				EC096EB823B616A100C08B65 /* SAPOData.framework in Embed Frameworks */,
+				EC096EBA23B616A100C08B65 /* SAPOfflineOData.framework in Embed Frameworks */,
+				EC096EB423B616A100C08B65 /* SAPFoundation.framework in Embed Frameworks */,
+				EC096EB023B616A100C08B65 /* SAPFiori.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EC096EA423B6164100C08B65 /* SAPFioriFlows.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFioriFlows.framework; path = "TestFiori4Ios/Release-iphoneos/SAPFioriFlows.framework"; sourceTree = "<group>"; };
+		EC096EA523B6164100C08B65 /* SAPML-Dependencies */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "SAPML-Dependencies"; path = "TestFiori4Ios/Release-iphoneos/SAPML-Dependencies"; sourceTree = "<group>"; };
+		EC096EA623B6164200C08B65 /* SAPML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPML.framework; path = "TestFiori4Ios/Release-iphoneos/SAPML.framework"; sourceTree = "<group>"; };
+		EC096EA723B6164200C08B65 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFoundation.framework; path = "TestFiori4Ios/Release-iphoneos/SAPFoundation.framework"; sourceTree = "<group>"; };
+		EC096EA823B6164200C08B65 /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPOData.framework; path = "TestFiori4Ios/Release-iphoneos/SAPOData.framework"; sourceTree = "<group>"; };
+		EC096EA923B6164200C08B65 /* SAPOfflineOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPOfflineOData.framework; path = "TestFiori4Ios/Release-iphoneos/SAPOfflineOData.framework"; sourceTree = "<group>"; };
+		EC096EAA23B6164200C08B65 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFiori.framework; path = "TestFiori4Ios/Release-iphoneos/SAPFiori.framework"; sourceTree = "<group>"; };
+		EC096EAB23B6164200C08B65 /* SAPCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPCommon.framework; path = "TestFiori4Ios/Release-iphoneos/SAPCommon.framework"; sourceTree = "<group>"; };
+		EC096EBB23B651F300C08B65 /* propositionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = propositionsTableViewController.swift; sourceTree = "<group>"; };
+		EC4D9C2D23B6097E00C72721 /* TestFiori4Ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFiori4Ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC4D9C3023B6097E00C72721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC4D9C3223B6097E00C72721 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EC4D9C3423B6097E00C72721 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC4D9C3723B6097E00C72721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC4D9C3A23B6097E00C72721 /* TestFiori4Ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestFiori4Ios.xcdatamodel; sourceTree = "<group>"; };
+		EC4D9C3C23B6098100C72721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC4D9C3F23B6098100C72721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC4D9C4123B6098100C72721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC4D9C5823B613BB00C72721 /* navController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC4D9C2A23B6097E00C72721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC096EB323B616A100C08B65 /* SAPFoundation.framework in Frameworks */,
+				EC096EAE23B616A100C08B65 /* SAPCommon.framework in Frameworks */,
+				EC096EAF23B616A100C08B65 /* SAPFiori.framework in Frameworks */,
+				EC096EAC23B6169400C08B65 /* SAPCommon.framework in Frameworks */,
+				EC096EB723B616A100C08B65 /* SAPOData.framework in Frameworks */,
+				EC096EB923B616A100C08B65 /* SAPOfflineOData.framework in Frameworks */,
+				EC096EB123B616A100C08B65 /* SAPFioriFlows.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC096EA323B6164100C08B65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC096EAB23B6164200C08B65 /* SAPCommon.framework */,
+				EC096EAA23B6164200C08B65 /* SAPFiori.framework */,
+				EC096EA423B6164100C08B65 /* SAPFioriFlows.framework */,
+				EC096EA723B6164200C08B65 /* SAPFoundation.framework */,
+				EC096EA523B6164100C08B65 /* SAPML-Dependencies */,
+				EC096EA623B6164200C08B65 /* SAPML.framework */,
+				EC096EA823B6164200C08B65 /* SAPOData.framework */,
+				EC096EA923B6164200C08B65 /* SAPOfflineOData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC4D9C2423B6097E00C72721 = {
+			isa = PBXGroup;
+			children = (
+				EC4D9C2F23B6097E00C72721 /* TestFiori4Ios */,
+				EC4D9C2E23B6097E00C72721 /* Products */,
+				EC096EA323B6164100C08B65 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EC4D9C2E23B6097E00C72721 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC4D9C2D23B6097E00C72721 /* TestFiori4Ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC4D9C2F23B6097E00C72721 /* TestFiori4Ios */ = {
+			isa = PBXGroup;
+			children = (
+				EC4D9C3023B6097E00C72721 /* AppDelegate.swift */,
+				EC4D9C3223B6097E00C72721 /* SceneDelegate.swift */,
+				EC4D9C3423B6097E00C72721 /* ViewController.swift */,
+				EC4D9C3623B6097E00C72721 /* Main.storyboard */,
+				EC4D9C3C23B6098100C72721 /* Assets.xcassets */,
+				EC4D9C3E23B6098100C72721 /* LaunchScreen.storyboard */,
+				EC4D9C4123B6098100C72721 /* Info.plist */,
+				EC4D9C3923B6097E00C72721 /* TestFiori4Ios.xcdatamodeld */,
+				EC4D9C5823B613BB00C72721 /* navController.swift */,
+				EC096EBB23B651F300C08B65 /* propositionsTableViewController.swift */,
+			);
+			path = TestFiori4Ios;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC4D9C2C23B6097E00C72721 /* TestFiori4Ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC4D9C4423B6098100C72721 /* Build configuration list for PBXNativeTarget "TestFiori4Ios" */;
+			buildPhases = (
+				EC4D9C2923B6097E00C72721 /* Sources */,
+				EC4D9C2A23B6097E00C72721 /* Frameworks */,
+				EC4D9C2B23B6097E00C72721 /* Resources */,
+				EC4D9C5C23B615BF00C72721 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestFiori4Ios;
+			productName = TestFiori4Ios;
+			productReference = EC4D9C2D23B6097E00C72721 /* TestFiori4Ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC4D9C2523B6097E00C72721 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Alexendre;
+				TargetAttributes = {
+					EC4D9C2C23B6097E00C72721 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = EC4D9C2823B6097E00C72721 /* Build configuration list for PBXProject "TestFiori4Ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC4D9C2423B6097E00C72721;
+			productRefGroup = EC4D9C2E23B6097E00C72721 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC4D9C2C23B6097E00C72721 /* TestFiori4Ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC4D9C2B23B6097E00C72721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4D9C4023B6098100C72721 /* LaunchScreen.storyboard in Resources */,
+				EC4D9C3D23B6098100C72721 /* Assets.xcassets in Resources */,
+				EC4D9C3823B6097E00C72721 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC4D9C2923B6097E00C72721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4D9C5923B613BB00C72721 /* navController.swift in Sources */,
+				EC4D9C3523B6097E00C72721 /* ViewController.swift in Sources */,
+				EC4D9C3123B6097E00C72721 /* AppDelegate.swift in Sources */,
+				EC4D9C3B23B6097E00C72721 /* TestFiori4Ios.xcdatamodeld in Sources */,
+				EC096EBC23B651F300C08B65 /* propositionsTableViewController.swift in Sources */,
+				EC4D9C3323B6097E00C72721 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EC4D9C3623B6097E00C72721 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC4D9C3723B6097E00C72721 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC4D9C3E23B6098100C72721 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC4D9C3F23B6098100C72721 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC4D9C4223B6098100C72721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC4D9C4323B6098100C72721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC4D9C4523B6098100C72721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SSSYB2535Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TestFiori4Ios/Release-iphoneos",
+				);
+				INFOPLIST_FILE = TestFiori4Ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Obli.progMobile.TestFiori4Ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC4D9C4623B6098100C72721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SSSYB2535Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TestFiori4Ios/Release-iphoneos",
+				);
+				INFOPLIST_FILE = TestFiori4Ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Obli.progMobile.TestFiori4Ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC4D9C2823B6097E00C72721 /* Build configuration list for PBXProject "TestFiori4Ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC4D9C4223B6098100C72721 /* Debug */,
+				EC4D9C4323B6098100C72721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC4D9C4423B6098100C72721 /* Build configuration list for PBXNativeTarget "TestFiori4Ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC4D9C4523B6098100C72721 /* Debug */,
+				EC4D9C4623B6098100C72721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC4D9C3923B6097E00C72721 /* TestFiori4Ios.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC4D9C3A23B6097E00C72721 /* TestFiori4Ios.xcdatamodel */,
+			);
+			currentVersion = EC4D9C3A23B6097E00C72721 /* TestFiori4Ios.xcdatamodel */;
+			path = TestFiori4Ios.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EC4D9C2523B6097E00C72721 /* Project object */;
+}

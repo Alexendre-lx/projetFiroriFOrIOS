@@ -1,0 +1,11 @@
+framework module SAPML {
+  umbrella header "SAPML.h"
+
+  export *
+  module * { export * }
+}
+
+module SAPML.Swift {
+    header "SAPML-Swift.h"
+    requires objc
+}
