@@ -13,15 +13,36 @@ class propositionsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Mes propositions"
         tableView.register(FUITimelineCell.self, forCellReuseIdentifier: FUITimelineCell.reuseIdentifier)
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
         
-
+        initHeader()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func initHeader(){
+        let item1 =  FUIKPIView()
+        let item1Value = FUIKPIFractionItem(string: "12")
+        item1.items = [item1Value]
+        item1.captionlabel.text = "Places proposées"
+        item1.tintColor = .blue
+        
+        let item2 =  FUIKPIView()
+        let item2Value = FUIKPIFractionItem(string: "5")
+        item2.items = [item2Value]
+        item2.captionlabel.text = "Places louées"
+        item2.tintColor = .blue
+        
+        let kpiArray = [item1, item2]
+
+        let KPIHeader = FUIKPIHeader()
+        KPIHeader.items = kpiArray as [FUIKPIContainer]
+        self.tableView.tableHeaderView  = KPIHeader
     }
 
     // MARK: - Table view data source
@@ -53,6 +74,11 @@ class propositionsTableViewController: UITableViewController {
 
         return cell
         
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailView = placeDetailsTableViewController()
+        self.navigationController?.pushViewController(detailView, animated: true)
     }
     
 

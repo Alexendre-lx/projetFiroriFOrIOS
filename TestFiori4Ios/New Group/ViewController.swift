@@ -29,7 +29,7 @@ class ViewController: FUIFormTableViewController {
 
         profilHeader = FUIProfileHeader()
         profilHeader.imageView.image = #imageLiteral(resourceName: "Image.jpg")
-        profilHeader.headlineText = "Harry Potter"
+        profilHeader.headlineText = "Paul anderson"
         profilHeader.subheadlineText = "The boy wizard, the boy wizard"
         profilHeader.descriptionLabel.text = "This is a description"
 
@@ -74,7 +74,6 @@ class ViewController: FUIFormTableViewController {
                 return 0
         break
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,7 +93,11 @@ class ViewController: FUIFormTableViewController {
     case 2:
         let tmpCell = tableView.dequeueReusableCell(withIdentifier: "buttonCell", for: indexPath) as! FUIButtonFormCell
         tmpCell.frame.size.width = tableView.frame.width / 2
-       tmpCell.tintColor = .systemFill
+        if #available(iOS 13.0, *) {
+            tmpCell.tintColor = .systemFill
+        } else {
+            // Fallback on earlier versions
+        }
         tmpCell.layer.cornerRadius = 10
         tmpCell.layer.borderColor = UIColor.systemBlue.cgColor
         tmpCell.layer.borderWidth = 1

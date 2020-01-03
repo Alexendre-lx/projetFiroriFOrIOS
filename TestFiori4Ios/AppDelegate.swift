@@ -9,13 +9,24 @@
 import UIKit
 import CoreData
 
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+     var window: UIWindow?
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let mainVc = mainViewController()
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        window?.rootViewController = mainVc
+        window?.makeKeyAndVisible()
         return true
     }
 

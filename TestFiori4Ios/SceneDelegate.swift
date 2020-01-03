@@ -9,6 +9,7 @@
 import UIKit
 import SAPFiori
 
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -16,9 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let mainScene = (scene as? UIWindowScene) else { return }
-        let mainView = ViewController()
-        let mainVc = navController(rootViewController: mainView)
-        mainVc.navigationBar.barTintColor = UIColor(hexString: "0A6ED1")
+        let mainVc = mainViewController()
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.rootViewController = mainVc
         window?.makeKeyAndVisible()
