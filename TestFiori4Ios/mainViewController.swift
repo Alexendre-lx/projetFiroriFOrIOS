@@ -19,6 +19,11 @@ class mainViewController: UITabBarController {
         let calendarView = calendarViewController()
         let calendarNavVc = navController(rootViewController: calendarView)
         calendarNavVc.title = "calendrier"
+        
+//        let controller1 = navController(rootViewController: mainVc)
+        
         self.viewControllers = [mainVc, calendarNavVc]
     }
+
+
 }

@@ -11,6 +11,7 @@
 		EC101F1723BF87BB002A17AB /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC101F1623BF87BB002A17AB /* mainViewController.swift */; };
 		EC101F1A23BF8CE0002A17AB /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC101F1923BF8CDF002A17AB /* calendarViewController.swift */; };
 		EC101F1D23BFA2E2002A17AB /* profilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC101F1C23BFA2E2002A17AB /* profilViewController.swift */; };
+		EC101F1F23C6227D002A17AB /* propositionFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC101F1E23C6227D002A17AB /* propositionFormTableViewController.swift */; };
 		EC4D9C3123B6097E00C72721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C3023B6097E00C72721 /* AppDelegate.swift */; };
 		EC4D9C3323B6097E00C72721 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C3223B6097E00C72721 /* SceneDelegate.swift */; };
 		EC4D9C3523B6097E00C72721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C3423B6097E00C72721 /* ViewController.swift */; };
@@ -66,6 +67,7 @@
 		EC101F1623BF87BB002A17AB /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		EC101F1923BF8CDF002A17AB /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
 		EC101F1C23BFA2E2002A17AB /* profilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profilViewController.swift; sourceTree = "<group>"; };
+		EC101F1E23C6227D002A17AB /* propositionFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = propositionFormTableViewController.swift; sourceTree = "<group>"; };
 		EC4D9C2D23B6097E00C72721 /* TestFiori4Ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFiori4Ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4D9C3023B6097E00C72721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4D9C3223B6097E00C72721 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				EC096EBB23B651F300C08B65 /* propositionsTableViewController.swift */,
 				EC4D9C3423B6097E00C72721 /* ViewController.swift */,
 				ECE61B9E23BF510B00A4CCDC /* placeDetailsTableViewController.swift */,
+				EC101F1E23C6227D002A17AB /* propositionFormTableViewController.swift */,
 			);
 			path = HomeGroup;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				EC101F1D23BFA2E2002A17AB /* profilViewController.swift in Sources */,
 				ECE61B9F23BF510B00A4CCDC /* placeDetailsTableViewController.swift in Sources */,
 				EC4D9C3123B6097E00C72721 /* AppDelegate.swift in Sources */,
+				EC101F1F23C6227D002A17AB /* propositionFormTableViewController.swift in Sources */,
 				EC4D9C3B23B6097E00C72721 /* TestFiori4Ios.xcdatamodeld in Sources */,
 				EC096EBC23B651F300C08B65 /* propositionsTableViewController.swift in Sources */,
 				EC4D9C3323B6097E00C72721 /* SceneDelegate.swift in Sources */,

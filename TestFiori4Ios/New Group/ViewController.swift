@@ -39,11 +39,11 @@ class ViewController: FUIFormTableViewController {
         activityControl.itemSize = CGSize(width: 24, height: 24)
         activityControl.spacing = CGFloat(36.0)
 
-        let phoneActivity = FUIActivityItem.phone
-        let msgActivity = FUIActivityItem.message
-        let emailActivity = FUIActivityItem.email
-        activityControl.addActivities([phoneActivity, msgActivity, emailActivity])
-        profilHeader.detailContentView = activityControl
+//        let phoneActivity = FUIActivityItem.phone
+//        let msgActivity = FUIActivityItem.message
+//        let emailActivity = FUIActivityItem.email
+//        activityControl.addActivities([phoneActivity, msgActivity, emailActivity])
+//        profilHeader.detailContentView = activityControl
 
         // If no animation is needed.
         self.tableView.tableHeaderView = profilHeader
@@ -69,10 +69,9 @@ class ViewController: FUIFormTableViewController {
             case 1:
                 return 10
         case 3:
-            return self.view.frame.height / 2
+            return self.view.frame.height / 3
             default:
                 return 0
-        break
         }
     }
     
@@ -103,9 +102,10 @@ class ViewController: FUIFormTableViewController {
         tmpCell.layer.borderWidth = 1
         tmpCell.layer.masksToBounds = true
         tmpCell.button.setTitle("Proposer", for: .normal)
+        tmpCell.button.addTarget(self, action: #selector(goToProps), for: .touchUpInside)
         cell = tmpCell
     case 3:
-         let tmpCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! UITableViewCell
+        let tmpCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) 
          let progressView = FUIKPIProgressView(frame: cell.frame)
          progressView.chartSize = .large
          progressView.center.x = self.view.center.x
@@ -126,6 +126,11 @@ class ViewController: FUIFormTableViewController {
     
     @objc func goToMyProps(){
         let newVc = propositionsTableViewController()
+        self.navigationController?.pushViewController(newVc, animated: true)
+    }
+    
+    @objc func goToProps(){
+        let newVc = propositionFormTableViewController()
         self.navigationController?.pushViewController(newVc, animated: true)
     }
     
