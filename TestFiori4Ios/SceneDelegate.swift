@@ -9,24 +9,51 @@
 import UIKit
 import SAPFiori
 
+
+import Foundation
+import SAPCommon
+import SAPFiori
+import SAPFioriFlows
+import SAPFoundation
+import SAPOData
+
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    private let logger = Logger.shared(named: "AppDelegateLogger")
+    var sessionManager: OnboardingSessionManager<ApplicationOnboardingSession>!
+    
+    
+    /// Delegate implementation of the application in a custom class
+    var onboardingErrorHandler: OnboardingErrorHandler?
+    private var flowProvider = OnboardingFlowProvider()
+    
+    private func initializeLogUploader() {
+        do {
+            // Attaches a LogUploadFileHandler instance to the root of the logging system
+            try SAPcpmsLogUploader.attachToRootLogger()
+        } catch {
+            self.logger.error("Failed to attach to root logger.", error: error)
+        }
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let mainScene = (scene as? UIWindowScene) else { return }
+        self.initializeLogUploader()
         let mainVc = mainViewController()
+        
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.rootViewController = mainVc
+//        window?.rootViewController = mainVc
+//        self.window!.rootViewController = FUIInfoViewController.init()
         window?.makeKeyAndVisible()
         window?.windowScene = mainScene
         
-        NUISettings.initWithStylesheet(name: "Palette")
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        Logger.root.logLevel = .debug
+         self.initializeOnboarding()
+        
+        UINavigationBar.applyFioriStyle()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -49,17 +76,63 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+//        OnboardingSessionManager.shared.unlock { error in
+//            guard let error = error else {
+//                return
+//            }
+//
+//            self.onboardingErrorHandler?.handleUnlockingError(error)
+//        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-
+        OnboardingSessionManager.shared.lock { _ in }
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
+    
+    /// Application specific code after successful onboard
+    func afterOnboard() {
+        guard let _ = self.sessionManager.onboardingSession else {
+            fatalError("Invalid state")
+        }
+
+//        self.initializeRemoteNotification()
+//        self.uploadLogs()
+//        self.uploadUsageReport()
+    }
+    
+    func initializeOnboarding() {
+        let presentationDelegate = ApplicationUIManager(window: self.window!)
+        self.onboardingErrorHandler = OnboardingErrorHandler()
+        self.sessionManager = OnboardingSessionManager(presentationDelegate: presentationDelegate, flowProvider: self.flowProvider, delegate: self.onboardingErrorHandler)
+        presentationDelegate.showSplashScreenForOnboarding { _ in }
+
+        self.onboardUser()
+    }
+
+    /// Start onboarding a user
+    func onboardUser() {
+        self.sessionManager.open { error in
+            if let error = error {
+//                self.onboardingErrorHandler?.handleOnboardingError(error)
+                return
+            }
+            self.afterOnboard()
+        }
+    }
+}
 
 
+// MARK: OnboardingSessionManager helper extension
+
+@available(iOS 13.0, *)
+extension OnboardingSessionManager {
+    static var shared: OnboardingSessionManager<ApplicationOnboardingSession>! {
+        return AppDelegate.shared.sessionManager
+    }
 }
 

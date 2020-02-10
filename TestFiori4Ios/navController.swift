@@ -9,22 +9,15 @@
 import UIKit
 
 class navController: UINavigationController {
-
+    var barController : UITabBarController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBar.barTintColor = UIColor(hexString: "0A6ED1")
-        // Do any additional setup after loading the view.
+        self.navigationBar.barTintColor = UIColor.preferredFioriColor(forStyle: .navigationBar)
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationBar.barTintColor = .preferredFioriColor(forStyle: .navigationBar)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setTabBarController (_ tabBarController : UITabBarController){
+        self.barController = tabBarController
     }
-    */
-
 }

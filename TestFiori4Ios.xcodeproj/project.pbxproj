@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC06709C23E3041100099C5F /* onBoardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC06709B23E3041100099C5F /* onBoardingManager.swift */; };
+		EC0670A223E3266600099C5F /* ApplicationUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC06709E23E3266500099C5F /* ApplicationUIManager.swift */; };
+		EC0670A323E3266600099C5F /* OnboardingErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC06709F23E3266500099C5F /* OnboardingErrorHandler.swift */; };
+		EC0670A423E3266600099C5F /* OnboardingFlowProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0670A023E3266500099C5F /* OnboardingFlowProvider.swift */; };
+		EC0670A523E3266600099C5F /* ConfigurationProvider.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC0670A123E3266500099C5F /* ConfigurationProvider.plist */; };
 		EC096EBC23B651F300C08B65 /* propositionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC096EBB23B651F300C08B65 /* propositionsTableViewController.swift */; };
 		EC101F1723BF87BB002A17AB /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC101F1623BF87BB002A17AB /* mainViewController.swift */; };
 		EC101F1A23BF8CE0002A17AB /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC101F1923BF8CDF002A17AB /* calendarViewController.swift */; };
 		EC101F1D23BFA2E2002A17AB /* profilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC101F1C23BFA2E2002A17AB /* profilViewController.swift */; };
 		EC101F1F23C6227D002A17AB /* propositionFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC101F1E23C6227D002A17AB /* propositionFormTableViewController.swift */; };
+		EC101F2323C898DC002A17AB /* overviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC101F2223C898DC002A17AB /* overviewTableViewController.swift */; };
 		EC4D9C3123B6097E00C72721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C3023B6097E00C72721 /* AppDelegate.swift */; };
 		EC4D9C3323B6097E00C72721 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C3223B6097E00C72721 /* SceneDelegate.swift */; };
 		EC4D9C3523B6097E00C72721 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C3423B6097E00C72721 /* ViewController.swift */; };
@@ -19,6 +25,11 @@
 		EC4D9C3D23B6098100C72721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4D9C3C23B6098100C72721 /* Assets.xcassets */; };
 		EC4D9C4023B6098100C72721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4D9C3E23B6098100C72721 /* LaunchScreen.storyboard */; };
 		EC4D9C5923B613BB00C72721 /* navController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4D9C5823B613BB00C72721 /* navController.swift */; };
+		EC51299923CF308B00539F6C /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51299823CF308B00539F6C /* helper.swift */; };
+		EC51299D23CF50B300539F6C /* homeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51299C23CF50B300539F6C /* homeCollection.swift */; };
+		EC51299F23D0838100539F6C /* propositionsJson.json in Resources */ = {isa = PBXBuildFile; fileRef = EC51299E23D0838100539F6C /* propositionsJson.json */; };
+		EC5129A123D087AA00539F6C /* apiGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5129A023D087AA00539F6C /* apiGetter.swift */; };
+		EC81CAE823C8BDE900F7AD7A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = EC81CAE723C8BDE900F7AD7A /* data.json */; };
 		ECE61B8D23BF40A200A4CCDC /* SAPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE61B8523BF409200A4CCDC /* SAPCommon.framework */; };
 		ECE61B8E23BF40A200A4CCDC /* SAPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ECE61B8523BF409200A4CCDC /* SAPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ECE61B9023BF40AC00A4CCDC /* SAPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE61B8523BF409200A4CCDC /* SAPCommon.framework */; };
@@ -33,6 +44,7 @@
 		ECE61B9B23BF40AC00A4CCDC /* SAPOfflineOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE61B8723BF409200A4CCDC /* SAPOfflineOData.framework */; };
 		ECE61B9C23BF40AC00A4CCDC /* SAPOfflineOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ECE61B8723BF409200A4CCDC /* SAPOfflineOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ECE61B9F23BF510B00A4CCDC /* placeDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE61B9E23BF510B00A4CCDC /* placeDetailsTableViewController.swift */; };
+		ECF2FE7723D850C3007B480F /* reservationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2FE7623D850C3007B480F /* reservationTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +67,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EC06709B23E3041100099C5F /* onBoardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingManager.swift; sourceTree = "<group>"; };
+		EC06709E23E3266500099C5F /* ApplicationUIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationUIManager.swift; sourceTree = "<group>"; };
+		EC06709F23E3266500099C5F /* OnboardingErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingErrorHandler.swift; sourceTree = "<group>"; };
+		EC0670A023E3266500099C5F /* OnboardingFlowProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFlowProvider.swift; sourceTree = "<group>"; };
+		EC0670A123E3266500099C5F /* ConfigurationProvider.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigurationProvider.plist; sourceTree = "<group>"; };
 		EC096EA423B6164100C08B65 /* SAPFioriFlows.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFioriFlows.framework; path = "TestFiori4Ios/Release-iphoneos/SAPFioriFlows.framework"; sourceTree = "<group>"; };
 		EC096EA523B6164100C08B65 /* SAPML-Dependencies */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "SAPML-Dependencies"; path = "TestFiori4Ios/Release-iphoneos/SAPML-Dependencies"; sourceTree = "<group>"; };
 		EC096EA623B6164200C08B65 /* SAPML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPML.framework; path = "TestFiori4Ios/Release-iphoneos/SAPML.framework"; sourceTree = "<group>"; };
@@ -68,6 +85,7 @@
 		EC101F1923BF8CDF002A17AB /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
 		EC101F1C23BFA2E2002A17AB /* profilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profilViewController.swift; sourceTree = "<group>"; };
 		EC101F1E23C6227D002A17AB /* propositionFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = propositionFormTableViewController.swift; sourceTree = "<group>"; };
+		EC101F2223C898DC002A17AB /* overviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overviewTableViewController.swift; sourceTree = "<group>"; };
 		EC4D9C2D23B6097E00C72721 /* TestFiori4Ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFiori4Ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4D9C3023B6097E00C72721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4D9C3223B6097E00C72721 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +95,11 @@
 		EC4D9C3F23B6098100C72721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC4D9C4123B6098100C72721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4D9C5823B613BB00C72721 /* navController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navController.swift; sourceTree = "<group>"; };
+		EC51299823CF308B00539F6C /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
+		EC51299C23CF50B300539F6C /* homeCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeCollection.swift; sourceTree = "<group>"; };
+		EC51299E23D0838100539F6C /* propositionsJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = propositionsJson.json; sourceTree = "<group>"; };
+		EC5129A023D087AA00539F6C /* apiGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiGetter.swift; sourceTree = "<group>"; };
+		EC81CAE723C8BDE900F7AD7A /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		ECE61B8523BF409200A4CCDC /* SAPCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPCommon.framework; path = "Release-iphoneos/SAPCommon.framework"; sourceTree = "<group>"; };
 		ECE61B8623BF409200A4CCDC /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPOData.framework; path = "Release-iphoneos/SAPOData.framework"; sourceTree = "<group>"; };
 		ECE61B8723BF409200A4CCDC /* SAPOfflineOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPOfflineOData.framework; path = "Release-iphoneos/SAPOfflineOData.framework"; sourceTree = "<group>"; };
@@ -86,6 +109,7 @@
 		ECE61B8B23BF409200A4CCDC /* SAPML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPML.framework; path = "Release-iphoneos/SAPML.framework"; sourceTree = "<group>"; };
 		ECE61B8C23BF409200A4CCDC /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFoundation.framework; path = "Release-iphoneos/SAPFoundation.framework"; sourceTree = "<group>"; };
 		ECE61B9E23BF510B00A4CCDC /* placeDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeDetailsTableViewController.swift; sourceTree = "<group>"; };
+		ECF2FE7623D850C3007B480F /* reservationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reservationTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +130,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC06709D23E3266500099C5F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EC06709E23E3266500099C5F /* ApplicationUIManager.swift */,
+				EC06709F23E3266500099C5F /* OnboardingErrorHandler.swift */,
+				EC0670A023E3266500099C5F /* OnboardingFlowProvider.swift */,
+				EC0670A123E3266500099C5F /* ConfigurationProvider.plist */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		EC096EA323B6164100C08B65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,10 +180,19 @@
 			path = ProfilGroup;
 			sourceTree = "<group>";
 		};
+		EC101F2123C89887002A17AB /* OverviewGroup */ = {
+			isa = PBXGroup;
+			children = (
+				EC101F2223C898DC002A17AB /* overviewTableViewController.swift */,
+			);
+			path = OverviewGroup;
+			sourceTree = "<group>";
+		};
 		EC4D9C2423B6097E00C72721 = {
 			isa = PBXGroup;
 			children = (
 				EC4D9C2F23B6097E00C72721 /* TestFiori4Ios */,
+				EC06709D23E3266500099C5F /* Onboarding */,
 				EC4D9C2E23B6097E00C72721 /* Products */,
 				EC096EA323B6164100C08B65 /* Frameworks */,
 			);
@@ -165,6 +209,8 @@
 		EC4D9C2F23B6097E00C72721 /* TestFiori4Ios */ = {
 			isa = PBXGroup;
 			children = (
+				EC51299723CF307300539F6C /* helperGroup */,
+				EC101F2123C89887002A17AB /* OverviewGroup */,
 				EC101F1B23BFA2C2002A17AB /* ProfilGroup */,
 				EC101F1823BF8B9C002A17AB /* CalendarGroup */,
 				ECE61B9D23BF50BF00A4CCDC /* HomeGroup */,
@@ -176,8 +222,20 @@
 				EC4D9C4123B6098100C72721 /* Info.plist */,
 				EC4D9C3923B6097E00C72721 /* TestFiori4Ios.xcdatamodeld */,
 				EC101F1623BF87BB002A17AB /* mainViewController.swift */,
+				EC51299E23D0838100539F6C /* propositionsJson.json */,
+				EC81CAE723C8BDE900F7AD7A /* data.json */,
+				EC06709B23E3041100099C5F /* onBoardingManager.swift */,
 			);
 			path = TestFiori4Ios;
+			sourceTree = "<group>";
+		};
+		EC51299723CF307300539F6C /* helperGroup */ = {
+			isa = PBXGroup;
+			children = (
+				EC51299823CF308B00539F6C /* helper.swift */,
+				EC5129A023D087AA00539F6C /* apiGetter.swift */,
+			);
+			path = helperGroup;
 			sourceTree = "<group>";
 		};
 		ECE61B9D23BF50BF00A4CCDC /* HomeGroup */ = {
@@ -187,6 +245,8 @@
 				EC4D9C3423B6097E00C72721 /* ViewController.swift */,
 				ECE61B9E23BF510B00A4CCDC /* placeDetailsTableViewController.swift */,
 				EC101F1E23C6227D002A17AB /* propositionFormTableViewController.swift */,
+				EC51299C23CF50B300539F6C /* homeCollection.swift */,
+				ECF2FE7623D850C3007B480F /* reservationTableView.swift */,
 			);
 			path = HomeGroup;
 			sourceTree = "<group>";
@@ -250,7 +310,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0670A523E3266600099C5F /* ConfigurationProvider.plist in Resources */,
+				EC51299F23D0838100539F6C /* propositionsJson.json in Resources */,
 				EC4D9C4023B6098100C72721 /* LaunchScreen.storyboard in Resources */,
+				EC81CAE823C8BDE900F7AD7A /* data.json in Resources */,
 				EC4D9C3D23B6098100C72721 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,15 +325,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0670A223E3266600099C5F /* ApplicationUIManager.swift in Sources */,
 				EC4D9C5923B613BB00C72721 /* navController.swift in Sources */,
 				EC4D9C3523B6097E00C72721 /* ViewController.swift in Sources */,
+				EC51299D23CF50B300539F6C /* homeCollection.swift in Sources */,
 				EC101F1D23BFA2E2002A17AB /* profilViewController.swift in Sources */,
 				ECE61B9F23BF510B00A4CCDC /* placeDetailsTableViewController.swift in Sources */,
+				EC0670A323E3266600099C5F /* OnboardingErrorHandler.swift in Sources */,
+				EC5129A123D087AA00539F6C /* apiGetter.swift in Sources */,
 				EC4D9C3123B6097E00C72721 /* AppDelegate.swift in Sources */,
+				EC0670A423E3266600099C5F /* OnboardingFlowProvider.swift in Sources */,
 				EC101F1F23C6227D002A17AB /* propositionFormTableViewController.swift in Sources */,
+				EC06709C23E3041100099C5F /* onBoardingManager.swift in Sources */,
+				EC101F2323C898DC002A17AB /* overviewTableViewController.swift in Sources */,
 				EC4D9C3B23B6097E00C72721 /* TestFiori4Ios.xcdatamodeld in Sources */,
+				ECF2FE7723D850C3007B480F /* reservationTableView.swift in Sources */,
 				EC096EBC23B651F300C08B65 /* propositionsTableViewController.swift in Sources */,
 				EC4D9C3323B6097E00C72721 /* SceneDelegate.swift in Sources */,
+				EC51299923CF308B00539F6C /* helper.swift in Sources */,
 				EC101F1A23BF8CE0002A17AB /* calendarViewController.swift in Sources */,
 				EC101F1723BF87BB002A17AB /* mainViewController.swift in Sources */,
 			);

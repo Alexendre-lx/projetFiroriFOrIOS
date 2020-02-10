@@ -1,0 +1,138 @@
+{
+  "proposition": [
+    {
+      "place": {
+        "etage": 0,
+        "position": 1,
+        "avaiability" : true
+      },
+      "date": "2020-01-02T00:00:00.000Z",
+      "lodger": {
+        "nom": "Paul",
+        "prenom": "jemich",
+        "profilPict": "https://image.shutterstock.com/image-photo/macro-imagr-bee-beautiful-cosmos-260nw-1282844227.jpg",
+        "matricule": "123456",
+        "ownedPlaces": [
+          {
+            "etage": 0,
+            "position": 1,
+            "avaiability" : true
+          },
+          {
+            "etage": 0,
+            "position": 2,
+            "avaiability" : false
+          },
+          {
+            "etage": 0,
+            "position": 3,
+            "avaiability" : true
+          }
+        ]
+      },
+      "parking": {
+        "nom": "Codilog Surface",
+        "adresse": "205 avenue Georges Clemenceau",
+        "nbTot": 156
+      }
+    },
+    {
+      "place": {
+        "etage": 0,
+        "position": 2,
+        "avaiability" : false
+      },
+      "date": "2020-01-02T00:00:00.000Z",
+      "lodger": {
+        "nom": "Paul",
+        "prenom": "jemich",
+        "profilPict": "https://image.shutterstock.com/image-photo/macro-imagr-bee-beautiful-cosmos-260nw-1282844227.jpg",
+        "matricule": "123456",
+        "ownedPlaces": [
+          {
+            "etage": 0,
+            "position": 1,
+            "avaiability" : true
+          },
+          {
+            "etage": 0,
+            "position": 2,
+            "avaiability" : false
+          },
+          {
+            "etage": 0,
+            "position": 3,
+            "avaiability" : true
+          }
+        ]
+      },
+      "parking": {
+        "nom": "Codilog Surface",
+        "adresse": "205 avenue Georges Clemenceau",
+        "nbTot": 156
+      }
+    },
+    {
+      "place": {
+        "etage": 1,
+        "position": 3,
+        "avaiability" : true
+      },
+      "date": "2020-01-02T00:00:00.000Z",
+      "lodger": {
+        "nom": "Paul",
+        "prenom": "jemich",
+        "profilPict": "https://image.shutterstock.com/image-photo/macro-imagr-bee-beautiful-cosmos-260nw-1282844227.jpg",
+        "matricule": "123456",
+        "ownedPlaces": [
+          {
+            "etage": 0,
+            "position": 1,
+            "avaiability" : true
+          },
+          {
+            "etage": 0,
+            "position": 2,
+            "avaiability" : false
+          },
+          {
+            "etage": 0,
+            "position": 3,
+            "avaiability" : true
+          }
+        ]
+      },
+      "parking": {
+        "nom": "Codilog Surface",
+        "adresse": "205 avenue Georges Clemenceau",
+        "nbTot": 56
+      }
+    },
+    {
+      "place": {
+        "etage": 0,
+        "position": 1,
+        "avaiability" : true
+      },
+      "date": "2020-01-02T00:00:00.000Z",
+      "lodger": {
+        "nom": "Paulain",
+        "prenom": "jemich",
+        "profilPict": "https://image.shutterstock.com/image-photo/macro-imagr-bee-beautiful-cosmos-260nw-1282844227.jpg",
+        "matricule": "123456",
+        "ownedPlaces": [
+          {
+            "etage":0,
+            "position": 4,
+            "avaiability" : true
+          }
+        ]
+      },
+      "parking": {
+        "nom": "Codilog Surface",
+        "adresse": "205 avenue Georges Clemenceau",
+        "nbTot": 156
+      }
+    }
+  ]
+}

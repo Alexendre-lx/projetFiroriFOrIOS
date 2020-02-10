@@ -10,6 +10,13 @@ import UIKit
 import SAPFiori
 
 class propositionsTableViewController: UITableViewController {
+    
+    private var propsArray : [propositions]!
+    private var numberOfElements = 0
+    private var rented = 0
+    
+    var bookingView : reservationTableView!
+    var isBookingPrompted = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,26 +24,44 @@ class propositionsTableViewController: UITableViewController {
         tableView.register(FUITimelineCell.self, forCellReuseIdentifier: FUITimelineCell.reuseIdentifier)
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
         
+        bookingView = reservationTableView(frame: CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height / 1.5), style: .plain)
+        bookingView.setTableView(self.tableView, self)
+        
         initHeader()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func jumpToBook(sender : IndexPath){
+        bookingView.setData(proposition: propsArray[sender.row])
+        (self.tableView as UIScrollView).showDismissBook(isPrompted: isBookingPrompted, bookingView: bookingView,controller: self)
+    }
+    
+    func getData(){
+        api.getPropositions() { (props) in
+//            print(props)
+            self.numberOfElements = props.proposition.count
+            self.propsArray = props.proposition
+            for prop in self.propsArray {
+                if !prop.place.avaiability{
+                    self.rented += 1
+                }
+            }
+            self.tableView.reloadData()
+        }
     }
     
     func initHeader(){
+        getData()
         let item1 =  FUIKPIView()
-        let item1Value = FUIKPIFractionItem(string: "12")
+        let item1Value = FUIKPIFractionItem(string: "\(propsArray.count)")
         item1.items = [item1Value]
         item1.captionlabel.text = "Places proposées"
-        item1.tintColor = .blue
+        item1.tintColor = .preferredFioriColor(forStyle: .chart1)
         
         let item2 =  FUIKPIView()
-        let item2Value = FUIKPIFractionItem(string: "5")
+        let item2Value = FUIKPIFractionItem(string: "\(rented)")
         item2.items = [item2Value]
         item2.captionlabel.text = "Places louées"
-        item2.tintColor = .blue
+        item2.tintColor = .preferredFioriColor(forStyle: .chart1)
         
         let kpiArray = [item1, item2]
 
@@ -51,80 +76,101 @@ class propositionsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+//            print("row \(indexPath) is deleted")
+            self.propsArray.remove(at: indexPath.row)
+            self.numberOfElements = propsArray.count
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+//            initHeader()
+//            tableView.reloadData()
+        }
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return numberOfElements
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 90
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier,
                                                             for: indexPath) as! FUIObjectTableViewCell
-        cell.headlineText = "\(indexPath.row + 1) janvier"
-        cell.subheadlineText = "Place : -1 / 6"
-//        cell.detailImage = tool.image
-        cell.descriptionText = "tool.description"
-        cell.statusText = "Louée"
-        cell.accessoryType = .detailButton
-
+        cell.headlineText = "\(propsArray[indexPath.row].parking.nom!)"
+        cell.subheadlineText = "Place : \(propsArray[indexPath.row].place.etage!) / \(propsArray[indexPath.row].place.position!)"
+        cell.footnoteLabel.text = "\(propsArray[indexPath.row].date!)"
+            switch propsArray[indexPath.row].place.avaiability {
+            case true:
+                cell.statusText = "disponible"
+                cell.statusLabel.textColor = UIColor.preferredFioriColor(forStyle: .positive)
+            default:
+                cell.statusText = "indisponible"
+                cell.statusLabel.textColor = .preferredFioriColor(forStyle: .negative)
+            }
+            cell.statusImageView.image = #imageLiteral(resourceName: "park.png")
         return cell
         
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailView = placeDetailsTableViewController()
-        self.navigationController?.pushViewController(detailView, animated: true)
+        if propsArray[indexPath.row].place.avaiability{
+        FUIToastMessage.show(message: "La place est disponible")
+        } else {
+            FUIToastMessage.show(message: "La place est indisponible")
+        }
     }
-    
+}
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+extension UIScrollView {
+    @objc func showDismissBook(isPrompted : Bool, bookingView : reservationTableView, controller : UIViewController){
+        var blurView = UIVisualEffectView()
+        var blur = UIBlurEffect(style: .prominent)
+        var containsBlur = false
+        
+        self.isScrollEnabled = true
+        
+        blurView.frame = controller.view.bounds
+        blurView.effect = blur
+        blurView.alpha = 0
+
+//        print("le controller \(self.inputViewController) \n\n")
+        
+        for subview in controller.view.subviews {
+            if subview as? UIVisualEffectView != nil {
+                blurView = subview as! UIVisualEffectView
+                containsBlur = true
+            }
+            if subview as? UIBlurEffect != nil {
+                blur = subview as! UIBlurEffect
+            }
+        }
+        if !containsBlur {
+            controller.view.addSubview(blurView)
+            controller.view.addSubview(bookingView)
+        }
+        
+        if isPrompted {
+            UIView.animate(withDuration: 0.5, animations: {
+                blurView.alpha = 0
+                bookingView.frame.origin.y = UIScreen.main.bounds.height
+            }) { (true) in
+                 bookingView.isPrompted = !bookingView.isPrompted
+            }
+        } else {
+            UIView.animate(withDuration: 0.5, animations: {
+                blurView.alpha = 1
+                bookingView.frame.origin.y = controller.view.frame.height - bookingView.frame.height - 60
+            }) { (true) in
+                 bookingView.isPrompted = !bookingView.isPrompted
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -8,66 +8,75 @@
 
 import UIKit
 import SAPFiori
+let formatter = DateFormatter()
 
-class calendarViewController: UIViewController , FUICalendarViewDelegate {
+class calendarViewController: UIViewController {
     var tableView = UITableView()
+    var currentDate = Date()
+    var bookingView : reservationTableView!
+    var propositionArray = [propositions]()
+    
+
     func calendarView(_ calendarView: FUICalendarView, didChangeSelections selections: [FUIDateSelection]) {
     }
-    
 
     var calendarView = FUICalendarView() // initializes in the default month mode and shows the current date on startup
 
     override func viewDidLoad() {
        super.viewDidLoad()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd"
         self.tableView.delegate = self
         self.tableView.dataSource = self
        self.viewRespectsSystemMinimumLayoutMargins = false
        self.view.backgroundColor = .white
        self.view.addSubview(calendarView )
         self.tableView.register(calendarDetailCell.self, forCellReuseIdentifier: "calendarCells")
-       calendarView .delegate = self
+       calendarView.delegate = self
        calendarView.translatesAutoresizingMaskIntoConstraints = false
        calendarView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 60).isActive = true
        calendarView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
        calendarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
         self.view.addSubview(tableView)
+        
+        bookingView = reservationTableView(frame: CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height / 1.5), style: .plain)
+        bookingView.setTableView(self.tableView, self)
+        
+        api.getPropositions() { (props) in
+            self.propositionArray = props.proposition
+            self.tableView.reloadData()
+        }
+    }
 
+    func jumpToBook(sender : IndexPath){
+        bookingView.setData(proposition: propositionArray[sender.row])
+        (self.tableView as UIScrollView).showDismissBook(isPrompted: bookingView.isPrompted, bookingView: bookingView,controller: self)
     }
 
     override func viewDidAppear(_ animated: Bool) {
        super.viewDidAppear(animated)
-        print(calendarView.frame)
-         print(calendarView.bounds)
         
         tableView.frame = CGRect(x: 0, y: calendarView.frame.maxY, width: self.view.bounds.width, height: self.view.bounds.height - calendarView.bounds.maxY)
-//                tableView.translatesAutoresizingMaskIntoConstraints = false
-//        //        tableView.topAnchor.constraint(equalToSystemSpacingBelow: calendarView.bottomAnchor, multiplier: 0).isActive = true
-//                tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
-//                tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
-    }
-
-    // Implement the FUICalendarViewDelegate methods
-
-    // Called after a scrolling action
-    func  calendarView(_ calendarView: FUICalendarView, didChangeVisibleDates visibleDates: FUIVisibleDates){
-
-        }
-
-    // Called when a cell ( displaying the date) is selected.
-    func calendarView(_ calendarView: FUICalendarView, didSelectCell: FUICalendarItemCollectionViewCell, at: Date)
-    {
 
     }
-
-    // Called when a cell ( displaying the date) is deselected.
-    func calendarView(_ calendarView: FUICalendarView, didDeselectCell: FUICalendarItemCollectionViewCell, at: Date)
-    {
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        jumpToBook(sender: indexPath)
     }
 
+
+
+}
+
+extension calendarViewController : FUICalendarViewDelegate {
+    func calendarView(_ calendarView: FUICalendarView, didSelectDate date: Date, cell: FUICalendarItemCollectionViewCell) {
+        print(date)
+        currentDate = date
+        self.tableView.reloadData()
+    }
     // Called before a cell ( displaying the date) is displayed.
     func calendar(_ calendarView: FUICalendarView, willDisplay cell: FUICalendarItemCollectionViewCell, forItemAt date: Date, indexPath: IndexPath) {
-
+//        print(date)
     }
 
     // Implement this method to set the title of the controller.
@@ -76,17 +85,18 @@ class calendarViewController: UIViewController , FUICalendarViewDelegate {
     func  calendarView(_ calendarView: FUICalendarView, didChangeTitleTo title: String) {
        self.navigationItem.title = title
     }
-
 }
 
 extension calendarViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        propositionArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "calendarCells", for: indexPath) as! calendarDetailCell
-        cell.setData()
+        var passedProp = propositionArray[indexPath.row]
+        passedProp.date = formatter.string(from: currentDate)
+        cell.setData(proposition: passedProp)
         return cell
     }
     
@@ -94,12 +104,20 @@ extension calendarViewController : UITableViewDelegate, UITableViewDataSource {
 }
 
 class calendarDetailCell : FUIObjectTableViewCell {
-    func setData () {
-        detailImage = UIImage(named: "image.png")
-        headlineText = "Jimmy Patrick"
-        subheadlineText = "Il y a 10 min"
-        footnoteText = "Commentaire"
-//        statusImageView.image = FUIIconLibrary.indicator.veryHighPriority.withRenderingMode(.alwaysTemplate)
+    func setData (proposition : propositions) {
+        headlineText = "Parking : \(proposition.parking.nom!)"
+        subheadlineText = "Date : \(proposition.date!)"
+        footnoteText = "Placement : Étage \(proposition.place.etage!) / Position \(proposition.place.position!)"
+        statusText = "disponible"
+        statusLabel.textColor = UIColor.preferredFioriColor(forStyle: .positive)
+        switch proposition.place.avaiability {
+        case true:
+            descriptionText = "Libre"
+            descriptionLabel.textColor = UIColor.preferredFioriColor(forStyle: .positiveBackground)
+        default:
+            descriptionText = "Occupée"
+            descriptionLabel.textColor = UIColor.preferredFioriColor(forStyle: .negative)
+        }
         iconImages = ["1"]
         accessoryType = .none
     }

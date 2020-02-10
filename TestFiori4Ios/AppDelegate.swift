@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+import SAPFioriFlows
+
+
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
@@ -18,9 +21,13 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
      var window: UIWindow?
-
-
-
+    
+    static var shared: AppDelegate {
+        return (UIApplication.shared.delegate as! AppDelegate)
+    }
+    
+    var sessionManager: OnboardingSessionManager<ApplicationOnboardingSession>!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let mainVc = mainViewController()
@@ -90,4 +97,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+// Convenience accessor for the AppDelegate
 

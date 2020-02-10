@@ -1,0 +1,77 @@
+{
+  "places": [
+    {
+      "parking" : 'codilog',
+      "etage" : 1,
+      "postion" : 1
+    },
+    {
+      "parking" : 'codilog',
+      "etage" : 1,
+      "postion" : 2
+    },
+    {
+      "parking" : 'codilog',
+      "etage" : 1,
+      "postion" : 3
+    },
+    {
+      "parking" : 'codilog',
+      "etage" : 1,
+      "postion" : 4
+    },
+    {
+      "parking" : 'codilog',
+      "etage" : 1,
+      "postion" : 5
+    },
+    {
+      "parking" : 'codilog',
+      "etage" : 1,
+      "postion" : 6
+    }
+  ]
+}
+
+
+{
+  "proposition": {
+      "Id":01
+    "PlaceId": 05,
+    "ParkingId": 05,
+    "Date": "2020-01-19",
+    "lodgerId": 05
+  }
+}
+
+{
+  "place": {
+    "Id": 08
+    "parkingId": 4,
+    "position": 1,
+    "availability":true
+  }
+}
+
+{
+  "parking": {
+    "Id": 4,
+    "Name": "CodilogSurface",
+    "Adresse": "205 avenue Georges Clemenceau",
+    "nbPlaces": 2548
+  }
+}
+
+{
+  "employee": {
+    "Id": 24586
+  }
+}
+
+{
+  "transactions": {
+    "prop": "propositionId",
+    "lodger": "employeeId",
+    "renter": "employeeId"
+  }
+}
