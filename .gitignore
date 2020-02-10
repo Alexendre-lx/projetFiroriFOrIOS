@@ -1,4 +1,2 @@
-Release-fat/
-Release-iphoneos/
-Release-iphonesimulator/
-TestFiori4Ios.xcodeproj.zip
+./Release-fat/SAPFiori.framework/SAPFiori
+./Release-fat/SAPOData.framework/SAPOData
