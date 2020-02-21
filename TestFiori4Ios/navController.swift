@@ -14,7 +14,7 @@ class navController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationBar.barTintColor = UIColor.preferredFioriColor(forStyle: .navigationBar)
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.systemGray6]
         navigationBar.barTintColor = .preferredFioriColor(forStyle: .navigationBar)
     }
     func setTabBarController (_ tabBarController : UITabBarController){

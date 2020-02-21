@@ -114,8 +114,6 @@ class propositionFormTableViewController: UITableViewController {
                 cell.dateFormatter = dateFormatter
                 cell.datePickerMode = .date
                 cell.datePicker.isHidden = false
-
-
                  // MARK:  implement onChangeHandler
                  cell.onChangeHandler = {
                     newValue in

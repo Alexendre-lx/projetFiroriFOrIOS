@@ -117,7 +117,6 @@ class propositionsTableViewController: UITableViewController {
             }
             cell.statusImageView.image = #imageLiteral(resourceName: "park.png")
         return cell
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -132,7 +131,7 @@ class propositionsTableViewController: UITableViewController {
 extension UIScrollView {
     @objc func showDismissBook(isPrompted : Bool, bookingView : reservationTableView, controller : UIViewController){
         var blurView = UIVisualEffectView()
-        var blur = UIBlurEffect(style: .prominent)
+        let blur = UIBlurEffect(style: .prominent)
         var containsBlur = false
         
         self.isScrollEnabled = true
@@ -148,9 +147,9 @@ extension UIScrollView {
                 blurView = subview as! UIVisualEffectView
                 containsBlur = true
             }
-            if subview as? UIBlurEffect != nil {
-                blur = subview as! UIBlurEffect
-            }
+//            if subview as? UIBlurEffect != nil {
+//                blur = subview as! UIBlurEffect
+//            }
         }
         if !containsBlur {
             controller.view.addSubview(blurView)
@@ -158,14 +157,14 @@ extension UIScrollView {
         }
         
         if isPrompted {
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.4, animations: {
                 blurView.alpha = 0
                 bookingView.frame.origin.y = UIScreen.main.bounds.height
             }) { (true) in
                  bookingView.isPrompted = !bookingView.isPrompted
             }
         } else {
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.4, animations: {
                 blurView.alpha = 1
                 bookingView.frame.origin.y = controller.view.frame.height - bookingView.frame.height - 60
             }) { (true) in

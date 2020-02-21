@@ -41,17 +41,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let mainScene = (scene as? UIWindowScene) else { return }
-        self.initializeLogUploader()
+//        self.initializeLogUploader()
         let mainVc = mainViewController()
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
-//        window?.rootViewController = mainVc
+        window?.rootViewController = mainVc
 //        self.window!.rootViewController = FUIInfoViewController.init()
         window?.makeKeyAndVisible()
         window?.windowScene = mainScene
         
         Logger.root.logLevel = .debug
-         self.initializeOnboarding()
+//         self.inithializeOnboarding()
         
         UINavigationBar.applyFioriStyle()
     }
@@ -89,7 +89,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-        OnboardingSessionManager.shared.lock { _ in }
+//        OnboardingSessionManager.shared.lock { _ in }
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
@@ -117,7 +117,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     /// Start onboarding a user
     func onboardUser() {
         self.sessionManager.open { error in
-            if let error = error {
+            if error != nil {
 //                self.onboardingErrorHandler?.handleOnboardingError(error)
                 return
             }

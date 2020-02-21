@@ -22,10 +22,15 @@ class ViewController: FUIFormTableViewController {
         self.title = "Accueil"
         let barButton = UIButton(type: .custom)
         barButton.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        barButton.setImage(#imageLiteral(resourceName: "parking.png"), for: .normal)
+        barButton.setImage(#imageLiteral(resourceName: "Image.jpg"), for: .normal)
+        barButton.addTarget(self, action: #selector(promptProfil), for: .touchUpInside)
         barButton.translatesAutoresizingMaskIntoConstraints = false
         barButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
         barButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        barButton.layer.cornerRadius = 20
+        barButton.layer.masksToBounds = true
+        barButton.layer.borderWidth = 1
+        barButton.layer.borderColor = UIColor.systemGray6.cgColor
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: barButton)
         
@@ -40,6 +45,12 @@ class ViewController: FUIFormTableViewController {
             self.setProfilHeader(name: "", rang: "", description: "")
             self.sizeHeaderToFit()
         }
+    }
+    
+    @objc func promptProfil () {
+        let profilView : profilViewController = profilViewController()
+        profilView.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: profilView.view.frame.height / 2)
+        self.present(profilView, animated: true, completion: nil)
     }
     
     private func sizeHeaderToFit() {
@@ -62,13 +73,15 @@ class ViewController: FUIFormTableViewController {
         let kpiView1Metric = FUIKPIMetricItem(string: "\(propositionArray.count)")
         kpiView1.items = [kpiView1Metric]
         kpiView1.captionlabel.text = "Places disponibles"
-        kpiView1.isEnabled = false
+        kpiView1.isEnabled = true
+//        kpiView1.addTarget(self, action: #selector(goToProps), for: .touchUpInside)
 
         let kpiView2 = FUIKPIView()
         let kpiView2Metric = FUIKPIMetricItem(string: String(propositionArray.first?.lodger.ownedPlaces.count ?? 0))
         kpiView2.items = [kpiView2Metric]
         kpiView2.captionlabel.text = "Places que vous proposez"
-        kpiView2.isEnabled = false
+        kpiView2.isEnabled = true
+        kpiView2.addTarget(self, action: #selector(goToMyProps), for: .touchUpInside)
         
         let kpiArray = [kpiView1, kpiView2]
         let head = FUIKPIHeader(items: kpiArray)
@@ -81,7 +94,7 @@ class ViewController: FUIFormTableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .systemGray6
         return view
     }
     

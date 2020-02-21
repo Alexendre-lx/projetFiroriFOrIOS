@@ -37,8 +37,8 @@ class reservationTableView: UITableView {
 //        print("previous est = \(previous), maintenant est \(scrollView.contentOffset.y)")
         if scrollView.contentOffset.y < 0  && previous > Int(scrollView.contentOffset.y){
             if (self.controller.frame.origin.y - scrollView.contentOffset.y < self.controller.frame.height / 1.5 ){
-                controller.showDismissBook(isPrompted: self.isPrompted, bookingView: self, controller: self.mainController)
                 isScrollEnabled = false
+                controller.showDismissBook(isPrompted: self.isPrompted, bookingView: self, controller: self.mainController)
             }
             UIView.animate(withDuration: 0.2) {
 //                self.controller.frame.origin.y -= scrollView.contentOffset.y

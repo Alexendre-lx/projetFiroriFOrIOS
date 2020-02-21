@@ -28,15 +28,15 @@ class calendarViewController: UIViewController {
         formatter.dateFormat = "yyyy-MM-dd"
         self.tableView.delegate = self
         self.tableView.dataSource = self
-       self.viewRespectsSystemMinimumLayoutMargins = false
-       self.view.backgroundColor = .white
-       self.view.addSubview(calendarView )
+        self.viewRespectsSystemMinimumLayoutMargins = false
+        self.view.backgroundColor = .systemGray6
+        self.view.addSubview(calendarView )
         self.tableView.register(calendarDetailCell.self, forCellReuseIdentifier: "calendarCells")
-       calendarView.delegate = self
-       calendarView.translatesAutoresizingMaskIntoConstraints = false
-       calendarView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 60).isActive = true
-       calendarView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
-       calendarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+        calendarView.delegate = self
+        calendarView.translatesAutoresizingMaskIntoConstraints = false
+        calendarView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        calendarView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        calendarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
         self.view.addSubview(tableView)
         
         bookingView = reservationTableView(frame: CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.view.frame.height / 1.5), style: .plain)
@@ -57,15 +57,11 @@ class calendarViewController: UIViewController {
        super.viewDidAppear(animated)
         
         tableView.frame = CGRect(x: 0, y: calendarView.frame.maxY, width: self.view.bounds.width, height: self.view.bounds.height - calendarView.bounds.maxY)
-
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         jumpToBook(sender: indexPath)
     }
-
-
-
 }
 
 extension calendarViewController : FUICalendarViewDelegate {
@@ -76,7 +72,6 @@ extension calendarViewController : FUICalendarViewDelegate {
     }
     // Called before a cell ( displaying the date) is displayed.
     func calendar(_ calendarView: FUICalendarView, willDisplay cell: FUICalendarItemCollectionViewCell, forItemAt date: Date, indexPath: IndexPath) {
-//        print(date)
     }
 
     // Implement this method to set the title of the controller.
@@ -99,8 +94,6 @@ extension calendarViewController : UITableViewDelegate, UITableViewDataSource {
         cell.setData(proposition: passedProp)
         return cell
     }
-    
-    
 }
 
 class calendarDetailCell : FUIObjectTableViewCell {

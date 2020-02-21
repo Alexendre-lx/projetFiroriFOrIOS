@@ -42,6 +42,7 @@ class overviewTableViewController: UITableViewController {
     func jumpToBook(sender : IndexPath){
          bookingView.setData(proposition: propositionArray[sender.row])
          (self.tableView as UIScrollView).showDismissBook(isPrompted: bookingView.isPrompted, bookingView: bookingView,controller: self)
+        (self.tableView as UIScrollView).isScrollEnabled = true
      }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

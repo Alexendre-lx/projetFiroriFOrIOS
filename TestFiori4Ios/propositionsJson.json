@@ -6,7 +6,7 @@
         "position": 1,
         "avaiability" : true
       },
-      "date": "2020-01-02T00:00:00.000Z",
+      "date": "2020-01-02",
       "lodger": {
         "nom": "Paul",
         "prenom": "jemich",
@@ -42,7 +42,7 @@
         "position": 2,
         "avaiability" : false
       },
-      "date": "2020-01-02T00:00:00.000Z",
+      "date": "2020-01-02",
       "lodger": {
         "nom": "Paul",
         "prenom": "jemich",
@@ -78,7 +78,7 @@
         "position": 3,
         "avaiability" : true
       },
-      "date": "2020-01-02T00:00:00.000Z",
+      "date": "2020-01-02",
       "lodger": {
         "nom": "Paul",
         "prenom": "jemich",
@@ -114,7 +114,7 @@
         "position": 1,
         "avaiability" : true
       },
-      "date": "2020-01-02T00:00:00.000Z",
+      "date": "2020-01-02",
       "lodger": {
         "nom": "Paulain",
         "prenom": "jemich",

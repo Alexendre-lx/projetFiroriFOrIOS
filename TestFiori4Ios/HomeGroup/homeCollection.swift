@@ -25,7 +25,7 @@ class homeCollection: UICollectionView {
         self.register(homeCells.self, forCellWithReuseIdentifier: "homeCollectionCell")
         self.register(FUICollectionSectionHeaderFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
         self.dataSource = self
-        self.backgroundColor = .white
+        self.backgroundColor = .systemGray6
         self.showsHorizontalScrollIndicator = false
         getData()
         bookingView = reservationTableView(frame: CGRect(x: 0, y: self.controller.view.frame.height, width: self.controller.view.frame.width, height: self.controller.view.frame.height / 1.5), style: .plain)
@@ -72,6 +72,7 @@ extension homeCollection : UICollectionViewDataSource {
         cell.status.textColor = UIColor.preferredFioriColor(forStyle: .positive)
         cell.actionLayout = .double
         cell.detailImageView.image = #imageLiteral(resourceName: "parking.png")
+        cell.detailImageView.tintColor = .systemGray6
         cell.detailImageView.contentMode = .scaleAspectFit
         cell.detailImageView.isCircular = true
         cell.initCell()
@@ -86,7 +87,7 @@ extension homeCollection : UICollectionViewDataSource {
         let suiteButton = UIButton()
         view.addSubview(suiteButton)
         suiteButton.setTitle("Tout voir", for: .normal)
-        suiteButton.setTitleColor(.lightGray, for: .normal)
+        suiteButton.setTitleColor(.systemGray6, for: .normal)
         suiteButton.translatesAutoresizingMaskIntoConstraints = false
         suiteButton.addTarget(self, action: #selector(goToList), for: .touchUpInside)
         let rightAnchor = NSLayoutConstraint(item: suiteButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -20)
